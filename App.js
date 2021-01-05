@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text, Button, useWindowDimensions, TouchableOpacity, Image } from 'react-native';
+import { useWindowDimensions } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { TransitionPresets, createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
@@ -7,69 +7,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 
 import Home from './src/screens/home';
-
-const NavigationDrawerStructure = (props) => {
-  //Structure for the navigatin Drawer
-  const toggleDrawer = () => {
-    //Props to open/close the drawer
-    props.navigationProps.toggleDrawer();
-  };
-
-  return (
-    <View>
-      <TouchableOpacity onPress={toggleDrawer}>
-        {/*Donute Button Image */}
-        <Image
-          source={{
-            uri:
-              'https://raw.githubusercontent.com/AboutReact/sampleresource/master/drawerWhite.png',
-          }}
-          style={{width: 25, height: 25, marginLeft: 5, tintColor: '#000'}}
-        />
-      </TouchableOpacity>
-      <Text>Hiee</Text>
-      <Text>Hiee</Text>
-      <Text>Hiee</Text>
-    </View>
-  );
-};
-
-function HomeScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-      <Button
-        title="Cart"
-        onPress={() => navigation.navigate('Cart')}
-      />
-    </View>
-  );
-}
-
-function CartScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Cart Screen</Text>
-      <Button
-        title="Home"
-        onPress={() => navigation.navigate('Home')}
-      />
-    </View>
-  );
-}
-
-function ProfileScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Profile Screen</Text>
-      <Button
-        title="Home"
-        onPress={() => navigation.navigate('Home')}
-      />
-    </View>
-  );
-}
-
+import Cart from './src/screens/cart';
+import Profile from './src/screens/profile';
+import Root from './src/navigations/root';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -88,15 +28,20 @@ function TabScreen() {
 					  } else if (route.name === 'Profile') {
               iconName = 'ios-person';
             } else {
-						iconName = 'ios-list';
+						iconName = 'ios-cart';
 					  }
-		  
-					  return <Ionicons name={iconName} size={size} color={color} />;
-					},
-				  })}>
+            if(focused) {
+              return <Ionicons name={iconName} size={size} color={'#bba0ff'} />;
+            } else {
+              return <Ionicons name={iconName} size={size} color={color} />;
+            }
+          },
+				  })}
+          tabBarOptions= {{ activeTintColor:'#bba0ff'}}
+          >
 				<Tab.Screen name="Home" component={Home} />
-				<Tab.Screen name="Cart" component={CartScreen} />
-				<Tab.Screen name="Profile" component={ProfileScreen} />
+				<Tab.Screen name="Cart" component={Cart} />
+				<Tab.Screen name="Profile" component={Profile} />
 			</Tab.Navigator>
   );
 }
@@ -110,7 +55,7 @@ function App() {
           activeTintColor: '#e91e63',
           itemStyle: {marginVertical: 5},
         }}
-        drawerContent={(props) => <NavigationDrawerStructure {...props} />}>
+        drawerContent={(props) => <Root {...props} />}>
         				<Drawer.Screen name="Tab" component={TabScreen} />
 
       </Drawer.Navigator>

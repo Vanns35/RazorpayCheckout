@@ -1,0 +1,29 @@
+{
+    "burgers": [
+      {
+        "id": 1,
+        "name": "Hot Spicy Burger",
+        "image": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2012/5/4/4/FNM-060112_Italian-Burger_s4x3.jpg.rend.hgtvcom.826.620.suffix/1371606349819.jpeg",
+        "rate": "Rs. 200",
+        "check": true,
+        "cart": false
+      },
+      {
+        "id": 2,
+        "name": "Aloo Tikki Burger",
+        "image": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2012/5/4/4/FNM-060112_Italian-Burger_s4x3.jpg.rend.hgtvcom.826.620.suffix/1371606349819.jpeg",
+        "rate": "Rs. 40",
+        "check": false,
+        "cart": false
+      },
+      {
+        "id": 3,
+        "name": "Cheesy Burger",
+        "image": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2012/5/4/4/FNM-060112_Italian-Burger_s4x3.jpg.rend.hgtvcom.826.620.suffix/1371606349819.jpeg",
+        "rate": "Rs 120",
+        "check": false,
+        "cart": false
+      }
+    ]
+}
+  

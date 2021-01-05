@@ -1,0 +1,27 @@
+export default {
+    // Colors
+    DARK: {
+      LOADING: '#0c9',
+      PRIMARY_COLOR: '#bba0ff',
+      LIGHT_PRIMARY_COLOR: '#d2c7fe',
+      DARK_PRIMARY_COLOR: '#a494fd',
+      LIGHT_RED: '#eb1c1c',
+      HEADER_RED: '#bc0000',
+      DARK_RED: '#990001',
+      RED: 'red',
+      SECONDARY_COLOR: "#FFC308",
+      WHITE: '#FFFFFF',
+      BLACK: '#000000',
+      GREEN: '#216c2a',
+      LIGHT_BLUE: '#6EA8DA',
+      DARK_BLUE: '#0F3274',
+      VERY_DARK_GRAY: '#999',
+      DARK_GRAY: '#606070',
+      MEDIUM_GRAY: '#808080',
+      LIGHT_GRAY: '#cccccc',
+      TRANSPARENT_GRAY: 'rgba(52, 52, 52, 0.3)',
+      TRANSPARENT_LIGHT_GRAY: 'rgba(52, 52, 52, 0.2)',
+      TRANSPARENT_WHITE_GRAY: 'rgba(255, 255, 255, 0.6)',
+      SHADOW_GRAY: '#c1c1c1',
+    },
+  }; 

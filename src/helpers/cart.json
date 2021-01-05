@@ -1,0 +1,10 @@
+{
+    "cart": [
+      {
+        "id": 1,
+        "burger_id": 1,
+        "quantity": 2
+      }
+    ]
+}
+  
