@@ -40,16 +40,13 @@ function TabScreen() {
           tabBarOptions= {{ activeTintColor:'#bba0ff'}}
           >
 				<Tab.Screen name="Home" component={Home} />
-				<Tab.Screen name="Cart" component={Cart} />
 				<Tab.Screen name="Profile" component={Profile} />
 			</Tab.Navigator>
   );
 }
 
-function App() {
-  const dimensions = useWindowDimensions();
+function DrawerScreen() {
   return (
-    <NavigationContainer>
       <Drawer.Navigator
         drawerContentOptions={{
           activeTintColor: '#e91e63',
@@ -59,6 +56,19 @@ function App() {
         				<Drawer.Screen name="Tab" component={TabScreen} />
 
       </Drawer.Navigator>
+  );
+}
+
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator
+      screenOptions={{
+        headerShown: false
+      }}>
+      <Stack.Screen name="Drawer" component={DrawerScreen} />
+      <Stack.Screen name="Cart" component={Cart} />
+    </Stack.Navigator>
     </NavigationContainer>
   );
 }
